@@ -1,0 +1,6 @@
+{
+  "name": "AI Skill Gap Analyzer",
+  "description": "Analyze career competency gaps, calculate career readiness scores, and generate personalized learning roadmaps for target job roles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
