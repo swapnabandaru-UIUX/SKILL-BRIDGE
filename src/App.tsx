@@ -96,6 +96,7 @@ export default function App() {
             targetRole={selectedRole}
             analysis={analysis}
             onAnalysisGenerated={(newAnalysis) => setDynamicAnalysis(newAnalysis)}
+            onBack={() => navigateTo('target-role')}
             onAnalysisComplete={() => {
               unlockStep(4);
               navigateTo('gap-dashboard');
@@ -108,7 +109,7 @@ export default function App() {
             analysis={analysis}
             selectedRole={selectedRole}
             userSkills={userSkills}
-            onBack={() => navigateTo('target-role')}
+            onBack={() => navigateTo('ai-analysis')}
             onProceed={() => {
               unlockStep(5);
               navigateTo('career-roadmap');

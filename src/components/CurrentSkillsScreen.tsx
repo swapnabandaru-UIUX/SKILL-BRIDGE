@@ -376,15 +376,19 @@ export const CurrentSkillsScreen: React.FC<CurrentSkillsScreenProps> = ({
       {/* Bottom Action Footer */}
       <div className="flex items-center justify-between pt-4 border-t border-slate-200">
         <div className="text-xs text-slate-500">
-          Ready to benchmark <span className="font-semibold text-slate-800">{skills.length} skills</span> against industry standards.
+          <span className="font-semibold text-slate-800">{skills.length} skills</span> configured in profile.
         </div>
 
         <button
-          onClick={onProceed}
-          disabled={skills.length === 0}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm rounded-xl shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          onClick={() => {
+            if (skills.length === 0) {
+              handleResetToDefault();
+            }
+            onProceed();
+          }}
+          className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm rounded-xl shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/30 transition-all cursor-pointer"
         >
-          <span>Select Target Job Role</span>
+          <span>Continue to Target Job Role</span>
           <ArrowRight className="w-4 h-4" />
         </button>
       </div>
